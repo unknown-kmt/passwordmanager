@@ -3,4 +3,6 @@
     <string name="hidden_field_content">***</string>
     <string name="go_to_set_website">Перейти на связанный сайт</string>
     <string name="default_caption">Данные аутентификации</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
 </resources>

@@ -3,4 +3,6 @@
     <string name="hidden_field_content">***</string>
     <string name="go_to_set_website">Go to set website</string>
     <string name="default_caption">Auth Data</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
 </resources>
