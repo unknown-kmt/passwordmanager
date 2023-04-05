@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary"
+    tools:context=".editScreen.EditRecordFragment">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/submit"
+        android:src="@drawable/check" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/cancel"
+        android:src="@drawable/cancel" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:text="@string/record_name"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/record_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:backgroundTint="@color/accent"
+                android:inputType="none"
+                android:minHeight="70dp"
+                android:textAlignment="center"
+                android:textColor="@color/accent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:text="@string/login"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/record_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:backgroundTint="@color/accent"
+                android:inputType="none"
+                android:minHeight="70dp"
+                android:textAlignment="center"
+                android:textColor="@color/accent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".25"
+                android:text="@string/password"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/record_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".90"
+                android:backgroundTint="@color/accent"
+                android:inputType="none"
+                android:minHeight="70dp"
+                android:textAlignment="center"
+                android:textColor="@color/accent" />
+
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_weight=".10"
+                android:background="@drawable/generate" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:text="@string/record_url"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/record_url"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:backgroundTint="@color/accent"
+                android:inputType="none"
+                android:minHeight="70dp"
+                android:textAlignment="center"
+                android:textColor="@color/accent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:text="@string/record_caption"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/record_url"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:backgroundTint="@color/accent"
+                android:inputType="none"
+                android:lines="8"
+                android:maxLines="10"
+                android:minHeight="70dp"
+                android:minLines="6"
+                android:textAlignment="center"
+                android:textColor="@color/accent" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

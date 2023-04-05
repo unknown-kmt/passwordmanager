@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import com.kmt.passwordmanager.R
 import com.kmt.passwordmanager.database.AuthInfoDatabase
 import com.kmt.passwordmanager.databinding.FragmentPasswordsBinding
@@ -31,10 +32,19 @@ class PasswordsFragment : Fragment() {
             false
         )
 
-        val application = requireNotNull(this.activity).application
+        val application = requireActivity().application
         val dao = AuthInfoDatabase.getInstance(application).getSleepDatabaseDao()
         viewModelFactory = PasswordsViewModelFactory(dao)
         viewModel = ViewModelProvider(this, viewModelFactory)[PasswordsViewModel::class.java]
+
+        val adapter = AuthInfoAdapter()
+        binding.recordsList.adapter = adapter
+
+        viewModel.records.observe(viewLifecycleOwner, Observer { records ->
+            if (records != null) {
+                adapter.data = records
+            }
+        })
 
         return binding.root
     }

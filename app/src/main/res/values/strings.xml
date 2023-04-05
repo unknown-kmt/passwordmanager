@@ -2,7 +2,19 @@
     <string name="app_name">Password Manager</string>
     <string name="hidden_field_content">***</string>
     <string name="go_to_set_website">Go to set website</string>
-    <string name="default_caption">Auth Data</string>
+    <string name="default_name">Auth Data</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
+    <string name="card_caption"><u>Show Caption</u></string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="record_name">Record Name</string>
+    <string name="record_url">Website</string>
+    <string name="record_caption">Caption</string>
+
+    <string name="login_copied">Login has been copied to clipboard</string>
+    <string name="password_copied">Password has been copied to clipboard</string>
+    <string name="cant_open_link">Can not open link. Please install browser on the device</string>
+
 </resources>

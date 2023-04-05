@@ -2,7 +2,19 @@
     <string name="app_name">Менеджер паролей</string>
     <string name="hidden_field_content">***</string>
     <string name="go_to_set_website">Перейти на связанный сайт</string>
-    <string name="default_caption">Данные аутентификации</string>
+    <string name="default_name">Данные аутентификации</string>
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
+    <string name="card_caption"><u>Показать заметку</u></string>
+    <string name="submit">Ввод</string>
+    <string name="cancel">Отмена</string>
+
+    <string name="record_name">Название записи</string>
+    <string name="record_url">Сайт</string>
+    <string name="record_caption">Заметка</string>
+
+    <string name="login_copied">Логин был скопирован в буфер обмена</string>
+    <string name="password_copied">Пароль был скопирован в буфер обмена</string>
+    <string name="cant_open_link">Невозможно открыть ссылку. Проверьте установлен ли браузер на устройстве</string>
+
 </resources>
