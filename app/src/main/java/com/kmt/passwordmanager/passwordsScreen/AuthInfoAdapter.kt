@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.isVisible
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kmt.passwordmanager.R
 import com.kmt.passwordmanager.database.model.AuthInfoRecord
@@ -50,11 +51,17 @@ class AuthInfoAdapter : RecyclerView.Adapter<AuthInfoViewHolder>() {
 
         // Password bind
         holder.passwordField.setOnClickListener(View.OnClickListener { view ->
-            onLoginInfoClickHandler(view, holder.passwordField, item)
+            onPasswordInfoClickHandler(view, holder.passwordField, item)
         })
 
         captionUpdating(holder, item)
         urlButtonUpdate(holder, item)
+
+        holder.editButton.setOnClickListener(View.OnClickListener { view ->
+            view.findNavController().navigate(
+                PasswordsFragmentDirections.actionPasswordsFragmentToEditRecordFragment(item.id)
+            )
+        })
     }
 
     /**
@@ -80,17 +87,18 @@ class AuthInfoAdapter : RecyclerView.Adapter<AuthInfoViewHolder>() {
 
     private fun captionUpdating(holder: AuthInfoViewHolder, item: AuthInfoRecord) {
         if (item.caption.isEmpty()) {
-            holder.captionField.setOnClickListener(View.OnClickListener { view ->
-                // If caption is opened
-                if (!holder.captionField.text.equals(view.context.resources.getString(R.string.card_caption))) {
-                    holder.captionField.setText(R.string.card_caption)
-                } else {
-                    holder.captionField.setText(item.caption, TextView.BufferType.NORMAL)
-                }
-            })
-        } else {
-            holder.captionField.isVisible = false
+            holder.captionText.isVisible = false
+            holder.captionButton.isVisible = false
+            return
         }
+
+        holder.captionButton.setOnClickListener(View.OnClickListener {
+            if (holder.captionText.text.isEmpty()) {
+                holder.captionText.text = item.caption
+            } else {
+                holder.captionText.text = ""
+            }
+        })
     }
 
     private fun onLoginInfoClickHandler(
@@ -100,7 +108,7 @@ class AuthInfoAdapter : RecyclerView.Adapter<AuthInfoViewHolder>() {
     ) {
         field.setText(authInfoRecord.login, TextView.BufferType.NORMAL)
         copyToClipboard(view, authInfoRecord.login)
-        Toast.makeText(view.context, R.string.login, Toast.LENGTH_SHORT).show()
+        Toast.makeText(view.context, R.string.login_copied, Toast.LENGTH_SHORT).show()
     }
 
     private fun onPasswordInfoClickHandler(
@@ -110,7 +118,7 @@ class AuthInfoAdapter : RecyclerView.Adapter<AuthInfoViewHolder>() {
     ) {
         field.setText(authInfoRecord.password, TextView.BufferType.NORMAL)
         copyToClipboard(view, authInfoRecord.password)
-        Toast.makeText(view.context, R.string.password, Toast.LENGTH_SHORT).show()
+        Toast.makeText(view.context, R.string.password_copied, Toast.LENGTH_SHORT).show()
     }
 
     private fun copyToClipboard(view: View, text: String) {

@@ -24,7 +24,9 @@ abstract class AuthInfoDatabase : RoomDatabase() {
                         context.applicationContext,
                         AuthInfoDatabase::class.java,
                         "authInfo_db"
-                    ).build()
+                    )
+                        .allowMainThreadQueries()
+                        .build()
 
                     INSTANCE = instance
                 }

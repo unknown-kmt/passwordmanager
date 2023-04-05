@@ -12,7 +12,7 @@ data class AuthInfoRecord(
      */
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: Long = -1L,
+    var id: Long = 0,
 
     /**
      * Наименование

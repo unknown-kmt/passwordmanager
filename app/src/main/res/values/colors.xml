@@ -4,4 +4,5 @@
     <color name="secondary">#232F34</color>
     <color name="accent">#F9AA33</color>
     <color name="text_color">#ECEFF1</color>
+    <color name="error_color">#ff0331</color>
 </resources>

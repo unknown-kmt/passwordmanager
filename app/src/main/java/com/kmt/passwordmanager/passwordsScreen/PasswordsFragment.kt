@@ -8,16 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.kmt.passwordmanager.R
 import com.kmt.passwordmanager.database.AuthInfoDatabase
 import com.kmt.passwordmanager.databinding.FragmentPasswordsBinding
 
 class PasswordsFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = PasswordsFragment()
-    }
-
     private lateinit var viewModel: PasswordsViewModel
     private lateinit var viewModelFactory: PasswordsViewModelFactory
 
@@ -44,6 +41,11 @@ class PasswordsFragment : Fragment() {
             if (records != null) {
                 adapter.data = records
             }
+        })
+
+        // Adding Auth data
+        binding.add.setOnClickListener(View.OnClickListener { view ->
+            view.findNavController().navigate(PasswordsFragmentDirections.actionPasswordsFragmentToEditRecordFragment(-1))
         })
 
         return binding.root

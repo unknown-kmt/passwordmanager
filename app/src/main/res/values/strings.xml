@@ -5,7 +5,7 @@
     <string name="default_name">Auth Data</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
-    <string name="card_caption"><u>Show Caption</u></string>
+    <string name="card_caption">Show Caption</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
 
@@ -15,6 +15,11 @@
 
     <string name="login_copied">Login has been copied to clipboard</string>
     <string name="password_copied">Password has been copied to clipboard</string>
-    <string name="cant_open_link">Can not open link. Please install browser on the device</string>
+    <string name="cant_open_link">Link is invalid!</string>
 
+    <string name="name_not_set">Name has not been set!</string>
+    <string name="login_not_set">Login has not been set!</string>
+    <string name="password_not_set">Password has not been set!</string>
+
+    <string name="generate_password">Generate password</string>
 </resources>

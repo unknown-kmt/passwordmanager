@@ -25,6 +25,8 @@ class PasswordGenerationUtil {
                 generators.add { "!@#$%^&*()_-+=.,:;*".random() }
             }
 
+            if (generators.isEmpty()) return ""
+
             val password : StringBuilder = StringBuilder()
 
             repeat(length) {

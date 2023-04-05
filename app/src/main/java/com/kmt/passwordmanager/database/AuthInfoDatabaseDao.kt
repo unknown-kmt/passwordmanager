@@ -8,7 +8,7 @@ import com.kmt.passwordmanager.database.model.AuthInfoRecord
 interface AuthInfoDatabaseDao {
 
     @Insert
-    fun insert(authInfoRecord: AuthInfoRecord)
+    fun insert(authInfoRecord: AuthInfoRecord) : Long
 
     @Update
     fun update(authInfoRecord: AuthInfoRecord)
@@ -21,4 +21,7 @@ interface AuthInfoDatabaseDao {
 
     @Query(value = "SELECT * FROM auth_info_table ORDER BY id DESC")
     fun getAllRecords(): LiveData<List<AuthInfoRecord>>
+
+    @Query(value = "SELECT id FROM auth_info_table ORDER BY id DESC LIMIT 1")
+    fun getMaxID(): Long
 }
