@@ -1,5 +1,6 @@
 package com.kmt.passwordmanager.passwordsScreen
 
+import android.content.ActivityNotFoundException
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
@@ -74,13 +75,19 @@ class AuthInfoAdapter : RecyclerView.Adapter<AuthInfoViewHolder>() {
         }
 
         holder.urlButton.setOnClickListener(View.OnClickListener { view ->
-            val address: Uri = Uri.parse(item.url)
+            val url = if (!item.url.startsWith("http")) {
+                "https://${item.url}"
+            } else {
+                item.url
+            }
+
+            val address: Uri = Uri.parse(url)
             val intent = Intent(Intent.ACTION_VIEW, address)
 
-            if (intent.resolveActivity(view.context.packageManager) == null) {
-                Toast.makeText(view.context, R.string.cant_open_link, Toast.LENGTH_LONG).show()
-            } else {
+            try {
                 startActivity(view.context, intent, null)
+            } catch (ex: ActivityNotFoundException) {
+                Toast.makeText(view.context, R.string.cant_open_link, Toast.LENGTH_LONG).show()
             }
         })
     }

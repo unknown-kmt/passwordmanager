@@ -57,7 +57,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/name"
                     android:layout_marginTop="16dp"
                     android:orientation="vertical">
 
@@ -70,22 +69,22 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start|center"
+                            android:layout_weight=".30"
                             android:text="@string/login"
-                            android:textColor="@color/text_color"
-                            android:layout_weight=".30"/>
+                            android:textColor="@color/text_color" />
 
                         <EditText
                             android:id="@+id/login"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight=".70"
+                            android:focusable="false"
                             android:inputType="none"
                             android:minHeight="70dp"
                             android:text="@string/hidden_field_content"
                             android:textAlignment="center"
                             android:textColor="@color/accent"
-                            app:backgroundTint="@color/accent"
-                            android:layout_weight=".70"
-                            android:focusable="false" />
+                            app:backgroundTint="@color/accent" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -97,29 +96,31 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight=".30"
                             android:text="@string/password"
-                            android:textColor="@color/text_color"
-                            android:layout_weight=".30"/>
+                            android:textColor="@color/text_color" />
+
                         <EditText
                             android:id="@+id/password"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight=".70"
+                            android:focusable="false"
                             android:inputType="none"
                             android:minHeight="70dp"
                             android:text="@string/hidden_field_content"
                             android:textAlignment="center"
                             android:textColor="@color/accent"
-                            app:backgroundTint="@color/accent"
-                            android:layout_weight=".70"
-                            android:focusable="false" />
+                            app:backgroundTint="@color/accent" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:orientation="vertical"
-                        android:layout_marginTop="16dp">
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical">
 
                         <Button
                             android:id="@+id/caption"
@@ -130,7 +131,9 @@
                         <TextView
                             android:id="@+id/caption_text"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/text_color" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
